@@ -3,12 +3,29 @@
 .content-box{
     /* border: 1px solid purple; */
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .content-box > p{
-  padding: 0.5em 0 0 1em;
-  margin-bottom: 1rem;
+  padding-top: 0.5rem;
   font-weight: 600;
+}
+
+.content-box_footer{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+}
+
+.content-box_footer img{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.content-box_footer p{
+    padding-top: 0.3rem;
+    padding-left: 0.2rem;
 }
 
 .card-component{

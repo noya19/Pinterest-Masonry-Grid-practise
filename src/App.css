@@ -1,11 +1,12 @@
 .pinterest_container{
-  width: 95%;
+  width: 98%;
   height: 100%;
   margin: auto;
   columns: 6;
   column-gap: 1rem;
-  /* break-inside: avoid; */
-  border: 1px solid blueviolet
+  break-inside: avoid;
+  /* border: 1px solid blueviolet */
+  padding-top: 5rem;
 }
 
 

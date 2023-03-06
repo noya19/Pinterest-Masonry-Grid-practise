@@ -26,14 +26,18 @@ const CardComponent = ({ cur }) => {
         </div>
         <img
           className="image_element"
-          key={cur}
-          alt={cur}
+          key={cur.id}
+          alt={cur.id}
           src={`https://source.unsplash.com/random/architecture-interior&${
             Math.random() * 1000
           }`}
         ></img>
       </div>
-      <p> Image Description</p>
+      {cur.desc && <p>{cur.desc}</p>}
+      <div className="content-box_footer">
+        {cur.src && <img src={cur.src} alt="hey"></img>}
+        {cur.src && <p>{cur.prof}</p>}
+      </div>
     </div>
   );
 };
