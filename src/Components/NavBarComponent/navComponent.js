@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import './navComponent.css';
-import plogo from './Pinterest-logo.png';
+import plogo from '../Pinterest-logo.png';
 
 const NavComponent = () => {
   const [isIconDisp, setIsIconDisp] = useState(true);
@@ -44,7 +44,7 @@ const NavComponent = () => {
         <button>Create</button>
       </div>
       <div className={`search ${isIconDisp ? '' : 'addBorderHighlight'}`}>
-        {isIconDisp && <i class="fas fa-search"></i>}
+        {isIconDisp && <i className="fas fa-search"></i>}
         <input
           type="search"
           onClick={onInputChangeHandler}
@@ -55,20 +55,20 @@ const NavComponent = () => {
       </div>
       <div className="nav-bar_secondpart">
         <a href="1" className="items">
-          <i class="fas fa-bell">
+          <i className="fas fa-bell">
             <div className="notification">
               <p>4</p>
             </div>
           </i>
         </a>
         <a href="1" className="items">
-          <i class="fa fa-comment-dots"></i>
+          <i className="fa fa-comment-dots"></i>
         </a>
         <a href="1" className="avatar">
           <div className="img">A</div>
         </a>
         <a href="1" className="drop-down">
-          <i class="fas fa-chevron-down"></i>
+          <i className="fas fa-chevron-down"></i>
         </a>
       </div>
     </nav>

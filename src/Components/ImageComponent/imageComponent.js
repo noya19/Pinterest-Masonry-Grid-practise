@@ -1,8 +1,9 @@
 import './cardStyle.css';
+import React from 'react';
 
-const CardComponent = ({ cur }) => {
+const ImageComponent = ({ cur }, ref) => {
   return (
-    <div className="content-box">
+    <div ref={ref} className="content-box">
       <div className="card-component">
         <div className="overlay">
           <div>
@@ -27,18 +28,16 @@ const CardComponent = ({ cur }) => {
         <img
           className="image_element"
           key={cur.id}
-          alt={cur.id}
-          src={`https://source.unsplash.com/random/architecture-interior&${
-            Math.random() * 1000
-          }`}
+          alt={cur.desc}
+          src={cur.src}
         ></img>
       </div>
       {cur.desc && <p>{cur.desc}</p>}
       <div className="content-box_footer">
-        {cur.src && <img src={cur.src} alt="hey"></img>}
-        {cur.src && <p>{cur.prof}</p>}
+        {cur.prof_src && <img src={cur.prof_src} alt="hey"></img>}
+        {cur.prof_name && <p>{cur.prof_name}</p>}
       </div>
     </div>
   );
 };
-export default CardComponent;
+export default React.forwardRef(ImageComponent);

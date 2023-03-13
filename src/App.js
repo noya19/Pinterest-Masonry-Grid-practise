@@ -1,203 +1,85 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
-import CardComponent from './Components/cardComponent';
-import NavComponent from './Components/navComponent';
-
-// const imgArr = [
-//   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 1, 20, 21, 22, 23,
-//   24,
-// ];
-
-const imgArr = [
-  {
-    id: 1,
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 2,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 3,
-    desc: 'Hey soul Sister ! 😁',
-  },
-  {
-    id: 4,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 6,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 7,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 8,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 9,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 10,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 11,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 12,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 13,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 14,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 15,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 16,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 17,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 18,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 19,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 20,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 21,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 22,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 23,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-  {
-    id: 24,
-    desc: 'Hey soul Sister ! 😁',
-    src: `https://source.unsplash.com/random/architecture-interior&${
-      Math.random() * 1000
-    }`,
-    prof: 'Nads',
-  },
-];
+import NavComponent from './Components/NavBarComponent/navComponent';
+import ImageGridComponent from './Components/ImageGridComponent/ImageGridComponent';
 
 function App() {
+  const [imageArr, setImageArr] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+
+  const observer = useRef();
+  const lastImageElementRef = useCallback(
+    (node) => {
+      if (isLoading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          setPage((prevPage) => {
+            return prevPage + 1;
+          });
+          console.log('Reached the end');
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [isLoading]
+  );
+
+  useEffect(() => {
+    console.log('Reached UseEffect here');
+    const fetchImages = async () => {
+      try {
+        const response = await fetch(
+          `https://api.unsplash.com/photos/?client_id=ekLLkOG20mQXhq9C9stqsNpV7YWRqE3raYPssBaNeJY&page=${page}&per_page=30`,
+          {
+            method: 'GET',
+          }
+        );
+        if (!response.ok) {
+          throw new Error('Something went wrong');
+        }
+
+        const data = await response.json();
+        // console.log(data);
+        const loadedData = [];
+        for (const item of data) {
+          loadedData.push({
+            id: item.id,
+            desc: item.description ? item.description : item.alt_description,
+            src: item.urls.small,
+            prof_src: item.user.profile_image.small,
+            prof_name: item.user.first_name,
+          });
+        }
+
+        setImageArr((previousArray) => {
+          console.log('This is old array', previousArray);
+          console.log('This is new array', loadedData);
+          return [...previousArray, ...loadedData];
+        });
+
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    fetchImages();
+    setIsLoading(false);
+  }, [page]);
+
   return (
     <>
       <NavComponent />
-      <div className="pinterest_container">
-        {imgArr.map((cur) => {
-          return <CardComponent cur={cur} />;
-        })}
-      </div>
+      {isLoading && <p>Loading....</p>}
+      {!isLoading && (
+        <ImageGridComponent
+          className={'pinterest_container'}
+          imageArr={imageArr}
+          ref={lastImageElementRef}
+        />
+      )}
     </>
   );
 }
