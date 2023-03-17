@@ -1,0 +1,114 @@
+.nav-bar_secondpart{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 1rem;
+}
+
+
+.nav-bar_secondpart .avatar{
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border: 1px solid black; */
+}
+
+.nav-bar_secondpart .avatar .img{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    font-size: 0.7rem;
+    background-color: #e5e5e5;
+}
+
+.nav-bar_secondpart .avatar:hover{
+    background-color: #e5e5e5;
+}
+
+.nav-bar_secondpart .items{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    /* border: 1px solid black; */
+}
+
+.items i{
+    position: relative;
+    font-size: 1.5rem;
+    color: #5b5b5b;
+}
+
+.items i:active{
+    color: black;
+}
+
+.active{
+    color: black;
+}
+
+.items .notification{
+    position: absolute;
+    height: 1.2rem;
+    width: 1.2rem ;
+    top: -7px;
+    right: -8px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    background-color: #e60022;;
+}
+
+.items .notification p{
+    font-size: 15px;
+}
+
+.items:hover{
+    background: #e5e5e5;;
+}
+
+.drop-down{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    padding-top: 0.2rem ;
+}
+
+.drop-down i{
+    color: #5b5b5b;
+}
+
+.drop-down:hover{
+    background: #e5e5e5;
+}
+
+
+.tooltip{
+    position: absolute;
+    background-color: black;
+    color: white;
+    top: 115%;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    border-radius: 0.6rem;
+    z-index: 100;
+}

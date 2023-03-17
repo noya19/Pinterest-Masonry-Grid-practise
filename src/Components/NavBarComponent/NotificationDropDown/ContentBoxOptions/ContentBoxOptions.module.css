@@ -1,0 +1,25 @@
+.content_action{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 84%;
+    right: -1%;
+    width: max-content;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* border: 1px solid black;  */
+}
+
+.content_action button{
+    width: 100%;
+    text-align: start;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    font-weight: 500;
+}
+
+.content_action button:hover{
+    background-color: #e5e5e5;
+}

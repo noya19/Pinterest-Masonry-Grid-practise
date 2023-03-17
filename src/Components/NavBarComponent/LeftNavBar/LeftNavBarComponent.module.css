@@ -1,0 +1,84 @@
+.nav-bar_firstpart{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 1rem;
+}
+
+.nav-bar_firstpart .logo{
+    height: 3rem;
+    width: 3rem;
+    /* margin: 0.5rem; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.nav-bar_firstpart .logo img{
+    height: 1.7rem;
+}
+
+.nav-bar_firstpart .logo:hover{
+    background-color: #e5e5e5;
+}
+
+.nav-bar_firstpart .logo > img:hover{
+    background-color: #e5e5e5;
+}
+
+.nav-bar_firstpart > button{
+    width: 4.7rem;
+    height: 3rem;
+    border-radius: 1.8rem;
+    margin: 0 0.2rem;
+    font-weight: 600;
+    /* border: 1px solid black; */
+}
+
+.button_selected{
+    background-color: black;
+    color: white;
+}
+
+/*------Drop down Menu for Create Button -------*/
+
+.createButton{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 0.2rem;
+    font-weight: 600;
+    /* border: 1px solid black; */
+}
+
+.createButton button{
+    width: 3.5rem;
+}
+
+.createButton_action{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 105%;
+    left: -50%;
+    width: 10rem;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* border: 1px solid black;  */
+}
+
+.createButton_action button{
+    width: 100%;
+    text-align: start;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.createButton_action button:hover{
+    background-color: #e5e5e5;
+}
+
+
