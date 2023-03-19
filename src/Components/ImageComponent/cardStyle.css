@@ -4,6 +4,8 @@
     /* border: 1px solid purple; */
     margin-bottom: 1rem;
     overflow: hidden;
+    width: auto;
+    height: min-content;
 }
 
 .content-box > p{

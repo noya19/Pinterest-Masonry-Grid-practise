@@ -1,7 +1,7 @@
 /* Search part of the design*/
 
 .search{
-    width: 67%;
+    flex: auto;
     height: 3rem;
     border-radius: 25px;
     overflow: hidden;

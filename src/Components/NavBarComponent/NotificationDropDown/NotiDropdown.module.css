@@ -17,7 +17,7 @@
 }
 
 .dropdown header{
-    flex: 10%;
+    height: 70px;
     text-align: center;
     font-size: 1.05rem;
     font-weight: 500;
