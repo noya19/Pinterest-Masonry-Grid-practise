@@ -4,7 +4,8 @@ import classes from './SearchComponent.module.css';
 const SeachComponent = () => {
   const [isIconDisp, setIsIconDisp] = useState(true);
 
-  const onInputChangeHandler = () => {
+  const onInputChangeHandler = (event) => {
+    console.log(event.target.value);
     setIsIconDisp(false);
   };
 

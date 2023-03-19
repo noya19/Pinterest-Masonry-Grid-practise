@@ -70,7 +70,7 @@ const RightNavBarComponent = () => {
             <ToolTip className={classes.tooltip} text="Notification" />
           )}
         </a>
-        {!dropDownComponent && <NotiDropdownComponent />}
+        {dropDownComponent && <NotiDropdownComponent />}
       </div>
       <div>
         <a
@@ -78,6 +78,9 @@ const RightNavBarComponent = () => {
           className={classes['items']}
           onMouseOver={() => displayTooltip('chat')}
           onMouseOut={() => displayTooltip('chat')}
+          onClick={(e) => {
+            e.preventDefault();
+          }}
         >
           <i className="fa fa-comment-dots"></i>
           {tootipDisplay.chat && (
@@ -91,6 +94,9 @@ const RightNavBarComponent = () => {
           className={classes['avatar']}
           onMouseOver={() => displayTooltip('profile')}
           onMouseOut={() => displayTooltip('profile')}
+          onClick={(e) => {
+            e.preventDefault();
+          }}
         >
           <div className={classes['img']}>A</div>
           {tootipDisplay.profile && (
@@ -104,6 +110,9 @@ const RightNavBarComponent = () => {
           className={classes['drop-down']}
           onMouseOver={() => displayTooltip('dropdown')}
           onMouseOut={() => displayTooltip('dropdown')}
+          onClick={(e) => {
+            e.preventDefault();
+          }}
         >
           <i className="fas fa-chevron-down"></i>
           {tootipDisplay.dropdown && (
