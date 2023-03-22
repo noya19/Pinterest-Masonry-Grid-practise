@@ -1,0 +1,37 @@
+.pinterest_container{
+    width: 98%;
+    height: 100%;
+    margin: auto;
+    columns: 6;
+    column-gap: 1rem;
+    break-inside: avoid;
+    /* border: 1px solid blueviolet */
+    padding-top: 5rem;
+  }
+  
+  
+  @media (max-width: 83.25rem){
+    .pinterest_container{
+      columns: 5;
+    }
+  }
+  
+  @media (max-width: 62.37rem){
+    .pinterest_container{
+      columns: 3;
+    }
+  }
+  
+  @media (max-width: 36.56rem){
+    .pinterest_container{
+      columns: 2;
+    }
+  }
+  
+  @media (max-width: 23.75rem){
+    .pinterest_container{
+      columns: 1;
+    }
+  }
+  
+  

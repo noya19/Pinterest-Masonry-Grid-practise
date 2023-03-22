@@ -1,17 +1,19 @@
+import React from 'react';
+
 import LeftNavBarComponent from './LeftNavBar/LeftNavBarComponent';
 import RightNavBarComponent from './RightNavBar/RightNavBarComponent';
 import SeachComponent from './SearchBar/SeachComponent';
 
 import './navComponent.css';
 
-const NavComponent = () => {
+const NavComponent = ({ page, setPage }) => {
   return (
     <nav className="nav-bar">
       <LeftNavBarComponent />
-      <SeachComponent />
+      <SeachComponent page={page} setPage={setPage} />
       <RightNavBarComponent />
     </nav>
   );
 };
 
-export default NavComponent;
+export default React.memo(NavComponent);
